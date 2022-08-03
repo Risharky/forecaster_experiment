@@ -20,6 +20,7 @@ import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
+from autots import AutoTS
 
 st.title(":chart_with_upwards_trend: AutoTS Modelo Arima")
 
