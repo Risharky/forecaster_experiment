@@ -49,7 +49,9 @@ with fuentedata:
      st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 2 de agosto de 2022")
      st.markdown("Actualizare datos de forma mensual. Acontinuacion podra ver algunos datos estadistiticos de estos datos.")
      st.write(df.head())
-     st.write(sns.lineplot(data=df, x="Fecha", y="Price"))
+     fig1 = plt.figure(figsize=(15,8))
+     sns.lineplot(data=df, x="Fecha", y="Price")
+     st.pyplot(fig1)
 
 #creating modeles, autoTS tries and get the best model
 #model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL'] models with errors dont use in this case UnobservedComponents, FBprofet, VARMAX, DynamicFactor, VECM
