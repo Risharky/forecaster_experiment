@@ -67,6 +67,13 @@ with seriesT:
      st.write(model)
      st.markdown("Resultado de predicción")
      st.write(forecast)
+     xa= forecast.index
+     ya= forecast["Price"]
+     fig = plt.figure(figsize=(15,8))
+     sns.lineplot(xa, ya)
+     st.pyplot(fig)
+
+     #st.write()
 
 #sidebar
 st.sidebar.markdown("Desarrollado para fines academicos, no use los datos generados para realizar transacciones")
