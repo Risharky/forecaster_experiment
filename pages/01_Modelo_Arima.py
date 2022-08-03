@@ -49,6 +49,8 @@ with fuentedata:
      st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 2 de agosto de 2022")
      st.markdown("Actualizare datos de forma mensual. Acontinuacion podra ver algunos datos estadistiticos de estos datos.")
      st.write(df.head())
+     st.write(df.tail())
+     st.markdown("Evolucion del precio en el 2022")
      fig1 = plt.figure(figsize=(15,8))
      sns.lineplot(data=df, x="Fecha", y="Price")
      st.pyplot(fig1)
@@ -74,6 +76,7 @@ with seriesT:
      fig = plt.figure(figsize=(15,8))
      sns.lineplot(xa, ya)
      st.pyplot(fig)
+     st.pyplot(prediction.plot(model.df_wide_numeric, remove_zeroes=False,))
 
      #st.write()
 
