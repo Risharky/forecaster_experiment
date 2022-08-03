@@ -48,7 +48,6 @@ with fuentedata:
      st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 2 de agosto de 2022")
      st.markdown("Actualizare datos de forma mensual. Acontinuacion podra ver algunos datos estadistiticos de estos datos.")
      st.write(df.head())
-     st.write(df.dtypes)
      st.write(sns.lineplot(data=df, x="Fecha", y="Price"))
 
 #data in
