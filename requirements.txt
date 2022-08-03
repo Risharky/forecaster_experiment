@@ -10,3 +10,4 @@ pandas
 autots
 statsmodels
 seaborn
+openpyxl
