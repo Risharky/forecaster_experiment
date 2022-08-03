@@ -34,7 +34,7 @@ with intro:
 
 #data in
 with fuentedata:
-     st.title("Datos usados")
+     st.title("Datos")
      st.markdown("Este proyecto se desarrolla de forma experimental para predecir variaciones en el precio del dólar(USD) contra el peso colombiano(COP), se realiza análisis del precio del dólar en pesos colombianos usando el precio de cierre, los datos usados provienen del histórico que genera la página especializada [investing.com](https://www.investing.com/currencies/usd-cop)")
      st.markdown("Actualizare datos de forma mensual para identificar la precisión y variación de valores en cada modelo.")
 

@@ -20,7 +20,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title(":chart_with_upwards_trend: Previsiones USD/COP usando Serie de tiempo")
+st.title(":chart_with_upwards_trend: AutoTS Modelo Arima")
 
 
 #creando horizontal containers
@@ -30,16 +30,25 @@ seriesT=st.container()
 
 #introducción
 with intro:
-     st.title("Proyecto con fines educativos ")
+     st.title("Modelo Arima")
      st.markdown("Dada la coyuntura mundial por causa de la inflación que a su vez es causada por diversos cuellos de botella generados por la pandemia y la geopolítica actual, se vio que el Dólar tuvo un fortalecimiento que no se esperaba en diversas partes del mundo incluyendo a Colombia, en este caso solo se crearán modelos de series de tiempo usando el paquete AutoTS y Statsmodels de Python.")
      st.markdown(" Para más información [modelos](https://www.statsmodels.org/devel/examples/)")
 
 
+#carga de datos
+df= pd.read_excel('datos/USD_COP Historical Data.xlsx')
+#configurando el campo fecha
+df['Fecha'] = pd.to_datetime(df['Fecha'])
+
 #data in
 with fuentedata:
+
      st.title("Datos")
-     st.markdown("Este proyecto se desarrolla de forma experimental para predecir variaciones en el precio del dólar(USD) contra el peso colombiano(COP), se realiza análisis del precio del dólar en pesos colombianos usando el precio de cierre, los datos usados provienen del histórico que genera la página especializada [investing.com](https://www.investing.com/currencies/usd-cop)")
-     st.markdown("Actualizare datos de forma mensual para identificar la precisión y variación de valores en cada modelo.")
+     st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 2 de agosto de 2022")
+     st.markdown("Actualizare datos de forma mensual. Acontinuacion podra ver algunos datos estadistiticos de estos datos.")
+     st.write(df.head())
+     st.write(df.dtypes)
+     st.write(sns.lineplot(data=df, x="Fecha", y="Price"))
 
 #data in
 with seriesT:
