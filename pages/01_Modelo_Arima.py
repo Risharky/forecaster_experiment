@@ -15,7 +15,10 @@
 
 #Importando paquetes
 import streamlit as st
-
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.title(":chart_with_upwards_trend: Previsiones USD/COP usando Serie de tiempo")
 
@@ -56,4 +59,3 @@ st.sidebar.write(f'''
     unsafe_allow_html=True
 )
 st.sidebar.markdown(" &copy; 2022 &copy;")
-
