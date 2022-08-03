@@ -35,7 +35,7 @@ with intro:
 #data in
 with fuentedata:
      st.title("Datos usados")
-     st.markdown("Este proyecto se desarrolla de forma experimental para predecir variaciones en el precio del dólar(USD) contra el peso colombiano(COP), se realiza análisis del precio del dólar en pesos colombianos usando el precio de cierre, los datos usados provienen del histórico que genera la página especializada investing.com")
+     st.markdown("Este proyecto se desarrolla de forma experimental para predecir variaciones en el precio del dólar(USD) contra el peso colombiano(COP), se realiza análisis del precio del dólar en pesos colombianos usando el precio de cierre, los datos usados provienen del histórico que genera la página especializada [investing.com](https://www.investing.com/currencies/usd-cop)")
      st.markdown("Actualizare datos de forma mensual para identificar la precisión y variación de valores en cada modelo.")
 
 #data in
@@ -47,7 +47,7 @@ with seriesT:
 #sidebar
 st.sidebar.markdown("Desarrollado para fines academicos, no use los datos generados para realizar transacciones")
 st.sidebar.write(f'''
-    <a target="_blank" href="risharky.github.io/">
+    <a target="_blank" href="https://risharky.github.io">
         <button>
             Retornar a GH pages
         </button>
