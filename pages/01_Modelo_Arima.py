@@ -50,11 +50,22 @@ with fuentedata:
      st.write(df.head())
      st.write(sns.lineplot(data=df, x="Fecha", y="Price"))
 
+#creating modeles, autoTS tries and get the best model
+#model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL'] models with errors dont use in this case UnobservedComponents, FBprofet, VARMAX, DynamicFactor, VECM
+model_list = ['ARIMA']
+#for performance the max values of tries are 1 and a 1 validation(zero value makes one validation), predidtions for 60 days the frecuency its automatic selected with the data
+model = AutoTS(forecast_length=30, frequency='infer', prediction_interval=0.95, ensemble='simple', model_list=model_list, transformer_list='all', max_generations=5, num_validations=2, n_jobs='auto')
+model = model.fit(df, date_col='Fecha', value_col='Price', id_col=None)
+prediction = model.predict()
+forecast = prediction.forecast
+
 #data in
 with seriesT:
-     st.title("AutoTS")
-     st.markdown("La librería autoTS es una librería de Python que permite automatizar la creación de series de tiempo, pero usa a su vez varios paquetes como statsmodels(se usaran 3 modelos de esta librería), prophet, sklearn, pytorch-forecasting entre otros, en futuros proyectos tal vez use estas librerías.")
-     st.markdown(" Para más información [AutoTS](https://github.com/winedarksea/AutoTS)")
+     st.title("AutoTS:ARIMA")
+     st.markdown("Parametros del modelo:")
+     st.write(model)
+     st.markdown("Resultado de predicción")
+     st.write(forecast)
 
 #sidebar
 st.sidebar.markdown("Desarrollado para fines academicos, no use los datos generados para realizar transacciones")
