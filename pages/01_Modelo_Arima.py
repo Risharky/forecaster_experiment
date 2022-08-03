@@ -21,7 +21,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 from autots import AutoTS
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.title(":chart_with_upwards_trend: AutoTS Modelo Arima")
 
 
@@ -52,7 +52,7 @@ with fuentedata:
      st.write(df.tail())
      st.markdown("Evolucion del precio en el 2022")
      fig1 = plt.figure(figsize=(15,8))
-     sns.lineplot(data=df, x="Fecha", y="Price")
+     sns.lineplot(data=df, x="Fecha", y="Price",markers=True, dashes=False)
      st.pyplot(fig1)
 
 #creating modeles, autoTS tries and get the best model
