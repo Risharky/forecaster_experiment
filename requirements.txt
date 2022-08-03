@@ -9,4 +9,4 @@ branca
 pandas
 autots
 statsmodels
-seanborn
+seaborn
