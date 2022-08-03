@@ -52,7 +52,7 @@ with fuentedata:
      st.write(df.tail())
      st.markdown("Evolucion del precio en el 2022")
      fig1 = plt.figure(figsize=(15,8))
-     sns.lineplot(data=df, x="Fecha", y="Price",markers=True, dashes=False)
+     sns.lineplot(data=df, x="Fecha", y="Price", sizes=(15,8),markers=True, dashes=False)
      st.pyplot(fig1)
 
 #creating modeles, autoTS tries and get the best model
@@ -66,7 +66,7 @@ forecast = prediction.forecast
 
 #data in
 with seriesT:
-     st.title("AutoTS:ARIMA")
+     st.title("AutoTS: ARIMA")
      st.markdown("Parametros del modelo:")
      st.write(model)
      st.markdown("Resultado de predicción")
