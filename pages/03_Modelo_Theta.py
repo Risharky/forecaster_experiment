@@ -22,7 +22,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from autots import AutoTS
 st.set_option('deprecation.showPyplotGlobalUse', False)
-st.title(":chart_with_upwards_trend: AutoTS Modelo Arima")
+st.title(":chart_with_downwards_trend: AutoTS Modelo Theta")
 
 
 #creando horizontal containers
@@ -32,7 +32,7 @@ seriesT=st.container()
 
 #introducción
 with intro:
-     st.title("Modelo Arima")
+     st.title("Modelo Theta")
      st.markdown("Dada la coyuntura mundial por causa de la inflación que a su vez es causada por diversos cuellos de botella generados por la pandemia y la geopolítica actual, se vio que el Dólar tuvo un fortalecimiento que no se esperaba en diversas partes del mundo incluyendo a Colombia, en este caso solo se crearán modelos de series de tiempo usando el paquete AutoTS y Statsmodels de Python.")
      st.markdown(" Para más información [modelos](https://www.statsmodels.org/devel/examples/)")
 
