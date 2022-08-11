@@ -46,7 +46,7 @@ df['Fecha'] = pd.to_datetime(df['Fecha'])
 with fuentedata:
 
      st.title("Datos")
-     st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 2 de agosto de 2022")
+     st.markdown("Se usa el registro historico de la pagína [investing.com](https://www.investing.com/currencies/usd-cop) desde el primero de enero de 2022 al 11 de agosto de 2022")
      st.markdown("Actualizare datos de forma mensual. Acontinuacion podra ver algunos datos estadistiticos de estos datos.")
      st.write(df.head())
      st.write(df.tail())
@@ -59,7 +59,7 @@ with fuentedata:
 #model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL'] models with errors dont use in this case UnobservedComponents, FBprofet, VARMAX, DynamicFactor, VECM
 model_list = ['GLM']
 #for performance the max values of tries are 1 and a 1 validation(zero value makes one validation), predidtions for 60 days the frecuency its automatic selected with the data
-model = AutoTS(forecast_length=30, frequency='infer', prediction_interval=0.95, ensemble='simple', model_list=model_list, transformer_list='all', max_generations=5, num_validations=2, n_jobs='auto')
+model = AutoTS(forecast_length=30, frequency='infer', prediction_interval=0.95, ensemble='simple', model_list=model_list, transformer_list='all', max_generations=3, num_validations=1)
 model = model.fit(df, date_col='Fecha', value_col='Price', id_col=None)
 prediction = model.predict()
 forecast = prediction.forecast

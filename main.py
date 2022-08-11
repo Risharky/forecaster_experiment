@@ -41,7 +41,7 @@ with fuentedata:
 #data in
 with seriesT:
      st.title("AutoTS")
-     st.markdown("La librería autoTS es una librería de Python que permite automatizar la creación de series de tiempo, pero usa a su vez varios paquetes como statsmodels(se usaran 3 modelos de esta librería), prophet, sklearn, pytorch-forecasting entre otros, en futuros proyectos tal vez use estas librerías.")
+     st.markdown("La librería autoTS es una librería de Python que permite automatizar la creación de series de tiempo, pero usa a su vez varios paquetes como statsmodels(se usaran 3 modelos de esta librería), prophet, sklearn, pytorch-forecasting entre otros, en futuros proyectos tal vez use estas librerías. Para hacer mas rapido el calculo se limitaron los tres modelos a 3 iteraciones y una validación")
      st.markdown(" Para más información [AutoTS](https://github.com/winedarksea/AutoTS)")
 
 #sidebar
