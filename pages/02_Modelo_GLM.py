@@ -54,12 +54,13 @@ with fuentedata:
      fig1 = plt.figure(figsize=(15,8))
      sns.lineplot(data=df, x="Fecha", y="Price", sizes=(15,8),markers=True, dashes=False)
      st.pyplot(fig1)
+     st.markdown("El modelo demora unos segundos, gracias por tu paciencia")
 
 #creating modeles, autoTS tries and get the best model
 #model_list = ['LastValueNaive', 'GLS', 'GLM', 'ETS', 'AverageValueNaive', 'ARIMA', 'Theta', 'ARDL'] models with errors dont use in this case UnobservedComponents, FBprofet, VARMAX, DynamicFactor, VECM
 model_list = ['GLM']
 #for performance the max values of tries are 1 and a 1 validation(zero value makes one validation), predidtions for 60 days the frecuency its automatic selected with the data
-model = AutoTS(forecast_length=30, frequency='infer', prediction_interval=0.95, ensemble='simple', model_list=model_list, transformer_list='all', max_generations=3, num_validations=1)
+model = AutoTS(forecast_length=30, frequency='infer', prediction_interval=0.95, ensemble='simple', model_list=model_list, transformer_list='all', max_generations=4, num_validations=2)
 model = model.fit(df, date_col='Fecha', value_col='Price', id_col=None)
 prediction = model.predict()
 forecast = prediction.forecast
